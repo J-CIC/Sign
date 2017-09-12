@@ -178,11 +178,13 @@ Page({
   getLoc:function(){
     var that = this
     wx.showLoading({
-      title: '定位中',
+      title: '定位中,请尽量打开GPS定位',
+      mask:true,
     })
     wx.getLocation({
       type: 'wgs84',
       success: function(res) {
+        wx.hideLoading()
         var latitude = res.latitude
         var longitude = res.longitude
         var speed = res.speed
@@ -191,8 +193,24 @@ Page({
           loc_info:latitude+","+longitude
         })
       },
-      complete:function(){
+      fail:function(){
+        console.log(arguments)
         wx.hideLoading()
+        wx.showModal({
+          title: '获取位置失败',
+          content:'请确认是否授权小程序获取位置',
+          confirmText:"去设置",
+          fail:function(){
+            console.log(arguments)
+          },
+          success:function(res){
+            if (res.confirm) {
+              wx.openSetting()
+            } else if (res.cancel) {
+
+            }
+          }
+        });
       }
     })
   },
