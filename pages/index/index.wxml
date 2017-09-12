@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="{{hasUserInfo && canIUse}}" class="mainView">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class="mid-content">
+    </view>
+    <view class="btn-groups">
+      <button class="btn" bindtap="newSign" type="primary">发起我的签到</button>
+      <button class="btn" bindtap="mySign" >查看我的签到</button>
+    </view>
+  </view>
+  <view wx:else class="usermotto">
+    <button bindtap="openSetting" type="primary">登录</button>
+    <text class="user-motto">需要登录获取信息才可正常使用~</text>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="page__hd">
+      <view class="page__title">我发起的签到</view>
+      <view class="page__desc">{{sign_num}}次</view>
+  </view>
+  <view class="page__bd" >
+      <view class="weui-form-preview" wx:for="{{my_sign}}">
+          <view class="weui-form-preview__hd">
+              <view class="weui-form-preview__label">已签到人数</view>
+              <view class="weui-form-preview__value_in-hd">{{item.records_count}}</view>
+          </view>
+          <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item" wx:if="{{item.sign_type!=2}}">
+              <view class="weui-form-preview__label">签到密码</view>
+              <view class="weui-form-preview__value">{{item.pwd}}</view>
+            </view>
+            <view class="weui-form-preview__item" wx:if="{{item.sign_type>1}}">
+              <view class="weui-form-preview__label">签到地址</view>
+              <view class="weui-form-preview__value">{{item.location}}</view>
+            </view>
+            <view class="weui-form-preview__item" wx:if="{{item.sign_type>1}}">
+              <view class="weui-form-preview__label">签到范围</view>
+              <view class="weui-form-preview__value">{{item.distance}}米</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">结束时间</view>
+              <view class="weui-form-preview__value">{{item.end_time}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__ft">
+           <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" url="/pages/sign/signSuccess?id={{item.id}}">转发至群中</navigator> 
+          <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" url="/pages/sign/attendSign?id={{item.id}}">查看详细</navigator>
+        </view>
+      </view>
+  </view>
+</view>
