@@ -1,5 +1,3 @@
-/**newSign.wxss**/
-@import "../../weui.wxss";
 .userinfo {
   display: flex;
   flex-direction: column;

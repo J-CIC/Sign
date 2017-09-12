@@ -17,30 +17,18 @@ Page({
   },
   checkLogin:function(){
     var that = this
-    var openId = wx.getStorageSync('openId') ? wx.getStorageSync('openId'):app.globalData.openId
-    this.setData({
-      openId:openId
-    })
-    that.getUserBasicInfo();
-    if (openId) {
-      // 已经登录
+    var openId = wx.getStorageSync('openId') 
+    if(openId){
+      this.setData({
+        openId: openId
+      })
       wx.setStorageSync('openId', openId)
+      that.getUserBasicInfo();
     }else{
       wx.login({
         success: function (res) {
           that.getOpenId(res.code);
         },
-      }) //重新登录
-      wx.checkSession({
-        success: function () {
-          console.log("未过期");
-          //session 未过期，并且在本生命周期一直有效
-          
-        },
-        fail: function () {
-          //登录态过期
-          
-        }
       })
     }
   },
@@ -51,6 +39,11 @@ Page({
       wx.openSetting({
         success: function (res) {
           //尝试再次登录
+          wx.login({
+            success: function (res) {
+              that.getOpenId(res.code);
+            },
+          })
           that.getUserBasicInfo();
         },
         fail:function(){
