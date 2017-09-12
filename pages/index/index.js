@@ -25,37 +25,21 @@ Page({
       wx.setStorageSync('openId', openId)
       that.getUserBasicInfo();
     }else{
-      wx.login({
-        success: function (res) {
-          that.getOpenId(res.code);
-        },
-      })
+      
     }
   },
   //跳转设置页面授权
   openSetting: function () {
     var that = this
-    if (wx.openSetting) {
-      wx.openSetting({
-        success: function (res) {
-          //尝试再次登录
-          wx.login({
-            success: function (res) {
-              that.getOpenId(res.code);
-            },
-          })
-          that.getUserBasicInfo();
-        },
-        fail:function(){
-          console.log(arguments)
-        },
-      })
-    } else {
-      wx.showModal({
-        title: '授权提示',
-        content: '小程序需要您的微信授权才能使用哦~ 错过授权页面的处理方法：删除小程序->重新搜索进入->点击授权按钮'
-      })
-    }
+    wx.login({
+      success: function (res) {
+        that.getOpenId(res.code);
+      },
+      fail:function(){
+        console.log(arguments)
+      
+      }
+    })    
   },
   newSign:function(){
     wx.redirectTo({
@@ -116,8 +100,60 @@ Page({
           hasUserInfo: true
         })
         that.sendRegister();
+      },
+      fail:function(){
+        wx.getSetting({
+          success: (res) => {
+            if(res.authSetting['scope.userInfo']==false){
+              that.confirmSetting();
+            }
+          }
+        })
+        console.log(arguments)
       }
     })
+  },
+  confirmSetting:function(){
+    var that = this;
+    wx.showModal({
+      title: '获取用户信息失败',
+      content: '请确认是否授权小程序获取信息',
+      confirmText: "去设置",
+      fail: function () {
+        console.log(arguments)
+      },
+      success: function (res) {
+        if (res.confirm) {
+          that.changeSetting()
+        } else if (res.cancel) {
+
+        }
+      }
+    });
+  },
+  changeSetting:function(){
+    var that = this;
+    if (wx.openSetting) {
+      wx.openSetting({
+        success: function (res) {
+          //尝试再次登录
+          wx.login({
+            success: function (res) {
+              that.getOpenId(res.code);
+            },
+          })
+          that.getUserBasicInfo();
+        },
+        fail: function () {
+          console.log(arguments)
+        },
+      })
+    } else {
+      wx.showModal({
+        title: '授权提示',
+        content: '小程序需要您的微信授权才能使用哦~ 错过授权页面的处理方法：删除小程序->重新搜索进入->点击授权按钮'
+      })
+    }
   },
   sendRegister:function(){
     var that = this
