@@ -21,7 +21,7 @@ Page({
   getSignInfo:function(){
     var that = this;
     wx.request({
-      url: 'https://withcic.cn/sign/' + this.data.id,
+      url: app.domain + 'sign/' + this.data.id,
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -69,7 +69,7 @@ Page({
   getRecordType:function(){
     var that = this;
     wx.request({
-      url: 'https://withcic.cn/record/getType',
+      url: app.domain + 'record/getType',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -155,7 +155,7 @@ Page({
       record_type: true,
     }) 
     wx.request({
-      url: 'https://withcic.cn/record',
+      url: app.domain + 'record',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

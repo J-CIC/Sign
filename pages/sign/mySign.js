@@ -12,7 +12,7 @@ Page({
   getMySign:function(){
     var that = this;
     wx.request({
-      url: 'https://withcic.cn/wxuser/' + wx.getStorageSync('openId'),
+      url: app.domain + 'wxuser/' + wx.getStorageSync('openId'),
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

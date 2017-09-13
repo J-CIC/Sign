@@ -51,7 +51,7 @@ Page({
     // console.log("getOpenId")
     //发起网络请求
     wx.request({
-      url: 'https://withcic.cn/getOpenid',
+      url: app.domain + 'getOpenid',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -162,7 +162,7 @@ Page({
   sendRegister:function(){
     var that = this
     wx.request({
-      url: 'https://withcic.cn/wxuser',
+      url: app.domain + 'wxuser',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

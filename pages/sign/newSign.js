@@ -133,7 +133,7 @@ Page({
     this.data.pwd_input ? sign_type += 1 : 0;
     this.data.loc_input ? sign_type += 2 : 0;
     wx.request({
-      url: 'https://withcic.cn/sign',
+      url: app.domain + 'sign',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
