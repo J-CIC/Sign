@@ -22,7 +22,7 @@
 }
 
 .btn-groups{
-  margin-top: 100rpx;
+  margin-top: 150rpx;
   width: 100%;
   display: flex;
   flex-direction: column;

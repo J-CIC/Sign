@@ -23,14 +23,14 @@ Page({
         openId: openId
       })
       wx.setStorageSync('openId', openId)
-      // that.getUserBasicInfo();
+      that.getUserBasicInfo();
     }else{
       that.openSetting();
     }
   },
   //跳转设置页面授权
   openSetting: function () {
-    console.log("openSetting")
+    // console.log("openSetting")
     var that = this
     wx.login({
       success: function (res) {
@@ -48,7 +48,7 @@ Page({
   },
   getOpenId:function(code){
     var that = this;
-    console.log("getOpenId")
+    // console.log("getOpenId")
     //发起网络请求
     wx.request({
       url: 'https://withcic.cn/getOpenid',
@@ -90,19 +90,19 @@ Page({
     })
   },
   getUserBasicInfo:function(){
-    console.log("getUserBasicInfo")
+    // console.log("getUserBasicInfo")
     var that = this;
     // 获取用户信息
     wx.getUserInfo({
       success: function(res){
-        console.log(res)
+        // console.log(res)
         wx.setStorageSync('imgUrl', res.userInfo.avatarUrl)
         wx.setStorageSync('nickname', res.userInfo.nickName)
         that.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
-        console.log(that.data)
+        // console.log(that.data)
         that.sendRegister();
       },
       fail:function(){
@@ -174,7 +174,7 @@ Page({
       },
       dataType: 'json',
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.data.err_code!=0) {
           wx.showModal({
             title: '出了点状况',

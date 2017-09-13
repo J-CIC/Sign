@@ -123,7 +123,7 @@ Page({
       this.showTopTips("请获取定位")
       return false;
     }
-    if(this.data.distance.length == 0){
+    if (this.data.loc_input && this.data.distance.length == 0){
       this.showTopTips("请输入位置精度")
       return false;
     }
@@ -151,6 +151,7 @@ Page({
         console.log(res)
         console.log(wx.getStorageSync('openId'))
         if (res.data.err_code!=0) {
+          wx.hideLoading()
           wx.showModal({
             title: '出了点状况',
             content: '服务器暂时无法提供服务，请检查网络',
@@ -165,6 +166,7 @@ Page({
       },
       fail: function (res) {
         console.log(res)
+        wx.hideLoading()
         wx.showModal({
           title: '出了点状况',
           content: '服务器暂时无法提供服务，请检查网络',
