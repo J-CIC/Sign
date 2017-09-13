@@ -1,4 +1,4 @@
-
+const app = getApp()
 Page({
   data:{
     sign_num:0,
