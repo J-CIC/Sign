@@ -10,7 +10,6 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
-  display: flex;
 }
 
 .userinfo-nickname {
@@ -24,15 +23,10 @@
 .btn-groups{
   margin-top: 150rpx;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: flex-end;
 }
 
 .mainView{
   width: 100%;
-  display: flex;
   min-height: 600rpx;
   flex-direction: column;
   align-items: center;

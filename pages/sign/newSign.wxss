@@ -23,18 +23,12 @@
 .btn-groups{
   margin-top: 50rpx;
   margin-bottom: 50rpx;
+  padding-bottom: 50rpx;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: flex-end;
 }
 
 .mainView{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: 600rpx;
   height:100%;
 }
@@ -42,9 +36,10 @@
 .mid-content{
   height: 400rpx;
   width: 100%;
+  margin-bottom:50rpx; 
 }
 
 .btn{
   width: 80%;
-  margin-top:50rpx; 
+  margin-bottom:30rpx;
 }

@@ -221,4 +221,9 @@ Page({
       distance: e.detail.value
     })
   },
+  goBack:function(){
+    wx.redirectTo({
+      url: '/pages/index/index',
+    })
+  }
 })

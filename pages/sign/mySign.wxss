@@ -12,6 +12,12 @@
     padding-right: 15px;
 }
 
+.goBack{
+  width: auto;
+  margin-bottom: 20rpx;
+  color: #1AAD19;
+}
+
 .page__ft{
     padding-bottom: 10px;
     text-align: center;

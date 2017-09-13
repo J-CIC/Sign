@@ -42,7 +42,7 @@ Page({
     })    
   },
   newSign:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../sign/newSign'
     })
   },
@@ -198,7 +198,7 @@ Page({
     })
   },
   mySign:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/sign/mySign',
     })
   }

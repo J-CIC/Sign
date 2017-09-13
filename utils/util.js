@@ -1,4 +1,5 @@
 const formatTime = date => {
+  date.setMinutes(date.getMinutes()+40)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()

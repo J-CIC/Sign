@@ -54,11 +54,11 @@
     <view class="btn-groups">
         <button class="btn" type="primary" bindtap="checkInput" disabled="{{record_type}}">{{record_info}}</button>
     </view>
-    <view class="page__bd sign_list">
+    <view class="sign_list">
       <view class="weui-panel weui-panel_access">
         <view class="weui-panel__hd">已签到用户{{p_num}}人</view>
         <view class="weui-panel__bd" >
-            <view url="" class="weui-media-box weui-media-box_appmsg" wx:for="{{sign_list}}">
+            <view class="weui-media-box weui-media-box_appmsg" wx:for="{{sign_list}}">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="{{item.wx_user.imgUrl}}" />
                 </view>

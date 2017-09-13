@@ -36,4 +36,9 @@ Page({
       }
     })
   },
+  goBack:function(){
+    wx.redirectTo({
+      url: '/pages/index/index',
+    })
+  }
 })
