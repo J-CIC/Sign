@@ -1,7 +1,8 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">我发起的签到</view>
-    <view class="page__desc">{{sign_num}}次</view>
+    <view class="page__desc">历史共{{sign_num}}次</view>
+    <view class="page__desc">只显示60天内的签到，请及时备份名单</view>
   </view>
   <view class="page__bd" >
       <view class="weui-form-preview" wx:for="{{my_sign}}">
@@ -26,9 +27,13 @@
               <view class="weui-form-preview__label">结束时间</view>
               <view class="weui-form-preview__value">{{item.end_time}}</view>
             </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">下载密码</view>
+              <view class="weui-form-preview__value">{{item.code}}</view>
+            </view>
         </view>
         <view class="weui-form-preview__ft">
-           <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" url="/pages/sign/signSuccess?id={{item.id}}">转发至群中</navigator> 
+           <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" url="/pages/sign/signSuccess?code={{item.urlencode_code}}&id={{item.id}}">转发/下载</navigator> 
           <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" url="/pages/sign/attendSign?id={{item.id}}">查看详细</navigator>
         </view>
       </view>

@@ -19,6 +19,9 @@ Page({
       method: 'GET',
       dataType: 'json',
       success: function (res) {
+        for(var i=0;i<res.data.signs.length;i++){
+          res.data.signs[i]["urlencode_code"] = encodeURIComponent(res.data.signs[i]["code"]);
+        }
         that.setData({
           sign_num:res.data.signs.length,
           my_sign:res.data.signs,

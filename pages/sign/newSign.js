@@ -161,7 +161,7 @@ Page({
           })
         } else {
           wx.hideLoading()
-          wx.redirectTo({ url:"/pages/sign/signSuccess?id="+res.data.id})
+          wx.redirectTo({ url: "/pages/sign/signSuccess?id=" + res.data.id + "&code=" + encodeURIComponent(res.data.code)})
         }
       },
       fail: function (res) {

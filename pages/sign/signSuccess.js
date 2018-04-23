@@ -1,7 +1,8 @@
 Page({
   onLoad:function(options){
     this.setData({
-      id:options.id
+      id:options.id,
+      code:decodeURIComponent(options.code)
     })
     wx.setNavigationBarTitle({
       title: "发起签到成功"

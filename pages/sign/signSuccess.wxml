@@ -6,6 +6,10 @@
         <view class="weui-msg__text-area">
             <view class="weui-msg__title">操作成功</view>
             <view class="weui-msg__desc">已成功创建签到，可以转发至群中开始签到</view>
+            <view class="weui-msg__desc">在公众号(Daily_Push)中回复</view>
+            <view class="weui-msg__desc"><text>签到</text></view>
+            <view class="weui-msg__desc">并在对应网页中输入下载密码：</view>
+            <view class="weui-msg__desc">{{code}}</view>
         </view>
         <view class="weui-msg__opr-area">
             <view class="weui-btn-area">

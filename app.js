@@ -3,5 +3,5 @@ App({
   onLaunch: function () {
 
   },
-  domain:"https://withcic.cn/",
+  domain:"https://sign.withcic.cn/",
 })
