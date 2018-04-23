@@ -1,7 +1,7 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">我发起的签到</view>
-    <view class="page__desc">历史共{{sign_num}}次</view>
+    <view class="page__desc">{{sign_num}}次</view>
     <view class="page__desc">只显示60天内的签到，请及时备份名单</view>
   </view>
   <view class="page__bd" >
