@@ -22,7 +22,7 @@
                 <view class="weui-footer__links">
                     <!-- <navigator url="" class="weui-footer__link">底部链接文本</navigator> -->
                 </view>
-                <view class="weui-footer__text">Copyright © 2016-2017 CIC</view>
+                <view class="weui-footer__text">Copyright © 2016-2018 CIC</view>
             </view>
         </view>
     </view>

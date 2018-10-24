@@ -11,6 +11,7 @@
 
 .sign_list{
   margin-top: 50rpx;
+  margin-bottom: 50rpx;
   width:100%;
   height: auto;
   display: relative;
