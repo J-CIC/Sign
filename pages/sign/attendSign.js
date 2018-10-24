@@ -31,7 +31,7 @@ Page({
       success: function (res) {
         var num = res.data.records ? res.data.records.length:0;
         that.setData({
-          userInfo: {
+          signInfo: {
             avatarUrl: res.data.wx_user.imgUrl,
             nickName: res.data.wx_user.nickname,
           },
@@ -229,7 +229,8 @@ Page({
       that.getUserBasicInfo();
       that.getRecordType();
     } else {
-      that.openSetting();
+      // that.openSetting();
+      wx.redirectTo({ url: "/pages/index/index?id="+that.data.id})
     }
   },
   //跳转设置页面授权

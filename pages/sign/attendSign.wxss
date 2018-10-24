@@ -81,3 +81,10 @@
   width: 80%;
   margin-top:50rpx; 
 }
+
+.ad-container{
+  margin-left: 3%;
+  margin-right: 3%;
+  text-align: center;
+  /* border: 10rpx solid #dddddd; */
+}

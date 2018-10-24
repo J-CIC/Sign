@@ -9,11 +9,18 @@ Page({
     openId:null,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    if(options.id){
+      this.setData({
+        id: options.id
+      })
+      console.log(this.data.id)
+    }
+    
     wx.setNavigationBarTitle({
       title: "签到中心"
     });
-    this.checkLogin();
+    // this.checkLogin();
   },
   checkLogin:function(){
     var that = this
@@ -183,6 +190,12 @@ Page({
 
             }
           })
+        }else{
+          if(that.data.id){
+            wx.redirectTo({
+              url: "/pages/sign/attendSign?id=" + that.data.id,
+            })
+          }
         }
       },
       fail: function (res) {

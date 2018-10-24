@@ -3,8 +3,8 @@
   <view class="mainView">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{err_msg}}</view>
     <view class="userinfo">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}发起的签到</text>
+      <image class="userinfo-avatar" src="{{signInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{signInfo.nickName}}发起的签到</text>
     </view>
     <view class="weui-cells__title">签到信息</view>
     <view class="weui-cells weui-cells_after-title details">
@@ -71,6 +71,6 @@
         </view>
       </view>
     </view>
-    <ad unit-id="adunit-a1a23f40594cf5e2"></ad>
+    <view class='ad-container'><ad unit-id="adunit-a1a23f40594cf5e2" style="width:90% !important;"></ad></view>
   </view>
 </view>
