@@ -11,5 +11,10 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"您的位置将用于签到定位"
+    }
   }
 }
